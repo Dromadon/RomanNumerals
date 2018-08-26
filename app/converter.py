@@ -7,19 +7,21 @@ def convert(numeral):
   if numeral in NUMERALS_TO_ROMAN.keys():
     return NUMERALS_TO_ROMAN[numeral]
 
-  elif numeral == 4:
-    return 'IV'
-
   else:
-    base = get_base(numeral)
-    if base == 1:
-      return 'I'*numeral
+    lower_base, upper_base = get_base(numeral)
+
+    if upper_base - numeral == 1:
+      return 'I'+NUMERALS_TO_ROMAN[upper_base]
     else:
-      return NUMERALS_TO_ROMAN[base]+'I'*(numeral-base)
+      if lower_base == 1:
+        return 'I'*numeral
+      else:
+        return NUMERALS_TO_ROMAN[lower_base]+'I'*(numeral-lower_base)
 
 
 
 def get_base(numeral):
   lower_base = max([i for i in ROMAN_BASE if i < numeral])
-  return lower_base
+  upper_base = min([i for i in ROMAN_BASE if i > numeral])
+  return lower_base, upper_base
 

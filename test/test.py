@@ -15,10 +15,10 @@ class TestConverter:
     # Then
     assert expected == result
 
-  def test_should_convert_4(self):
+  def test_should_convert_4_and_9(self):
     # Given
-    numbers = [4]
-    expected = ['IV']
+    numbers = [4, 9]
+    expected = ['IV', 'IX']
 
     # When
     result = [convert(number) for number in numbers]
