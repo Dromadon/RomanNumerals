@@ -14,3 +14,26 @@ class TestConverter:
 
     # Then
     assert expected == result
+
+  def test_should_convert_4(self):
+    # Given
+    numbers = [4]
+    expected = ['IV']
+
+    # When
+    result = [convert(number) for number in numbers]
+
+    # Then
+    assert expected == result
+
+  def test_should_convert_direct_numerals(self):
+    # Given
+    numbers = [1, 5, 10, 50, 100, 500, 1000]
+    expected = ['I', 'V', 'X', 'L', 'C', 'D', 'M']
+
+    # When
+    result = [convert(number) for number in numbers]
+
+    # Then
+    assert expected == result
+
