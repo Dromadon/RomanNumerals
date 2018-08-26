@@ -37,3 +37,13 @@ class TestConverter:
     # Then
     assert expected == result
 
+  def test_should_convert_from_6_to_8(self):
+    # Given
+    numbers = [6, 7, 8]
+    expected = ['VI', 'VII', 'VIII']
+
+    # When
+    result = [convert(number) for number in numbers]
+
+    # Then
+    assert expected == result
