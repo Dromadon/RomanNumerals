@@ -47,3 +47,16 @@ class TestConverter:
 
     # Then
     assert expected == result
+
+  def test_should_convert_20_30(self):
+    # Given
+    numbers = [20, 30]
+    expected = ['XX', 'XXX']
+
+    # When
+    result = [convert(number) for number in numbers]
+
+    # Then
+    assert expected == result
+
+
