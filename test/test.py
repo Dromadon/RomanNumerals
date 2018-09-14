@@ -59,4 +59,24 @@ class TestConverter:
     # Then
     assert expected == result
 
+  def test_should_convert_11_to_13(self):
+    # Given
+    numbers = [11, 12, 13]
+    expected = ['XI', 'XII', 'XIII']
 
+    # When
+    result = [convert(number) for number in numbers]
+
+    # Then
+    assert expected == result
+
+  def test_should_convert_40(self):
+    # Given
+    numbers = [40]
+    expected = ['XL']
+
+    # When
+    result = [convert(number) for number in numbers]
+
+    # Then
+    assert expected == result
