@@ -80,3 +80,25 @@ class TestConverter:
 
     # Then
     assert expected == result
+
+  def test_should_convert_100_to_1000(self):
+    # Given
+    numbers = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+    expected = ['C','CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM', 'M']
+
+    # When
+    result = [convert(number) for number in numbers]
+
+    # Then
+    assert expected == result
+
+  def test_should_convert_243_596_2449(self):
+    # Given
+    numbers = [243, 596, 2449]
+    expected = ['CCXLIII', 'DXCVI', 'MMCDXLIX']
+
+    # When
+    result = [convert(number) for number in numbers]
+
+    # Then
+    assert expected == result
